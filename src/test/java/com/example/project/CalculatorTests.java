@@ -10,9 +10,13 @@
 
 package com.example.project;
 
+import com.example.project.hello.Application;
+import com.example.project.hello.MessagePrinter;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 class CalculatorTests {
 
@@ -22,4 +26,12 @@ class CalculatorTests {
 		assertEquals(2, calculator.add(1, 1), "1 + 1 should equal 2");
 	}
 
+	@Test
+	void add2() {
+            ApplicationContext context = 
+                new AnnotationConfigApplicationContext(Application.class);
+            MessagePrinter printer = context.getBean(MessagePrinter.class);
+            System.out.println(printer.getMessage());
+            assertEquals("Hello World!", printer.getMessage());
+	}
 }
