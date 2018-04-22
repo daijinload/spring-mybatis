@@ -55,6 +55,8 @@ googleのフォーマッタを使っています。インデントが2スペー�
 cd プロジェクトroot
 wget https://github.com/google/google-java-format/releases/download/google-java-format-1.5/google-java-format-1.5-all-deps.jar
 find . -name "*.java" | xargs java -jar ./google-java-format-1.5-all-deps.jar --replace
+or
+git diff --name-only | fgrep .java | xargs java -jar ./google-java-format-1.5-all-deps.jar --replace
 ```
 
 ## spotbugs
