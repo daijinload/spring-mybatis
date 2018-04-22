@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 @Service
-public class HelloWorldService {
+public class WelcomeService {
 
-    private static final Logger logger = LoggerFactory.getLogger(HelloWorldService.class);
+    private static final Logger logger = LoggerFactory.getLogger(WelcomeService.class);
 
     public String getDesc() {
 

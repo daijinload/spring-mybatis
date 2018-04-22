@@ -20,22 +20,21 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-
 public class WelcomeControllerTest {
 
     private MockMvc mockMvc;
-    
+
     @BeforeEach
     public void setup() {
- 
+
         // Process mock annotations
         MockitoAnnotations.initMocks(this);
- 
+
         // Setup Spring test in standalone mode
-        this.mockMvc = MockMvcBuilders.standaloneSetup(new WelcomeController(new HelloWorldService())).build();
- 
+        this.mockMvc = MockMvcBuilders.standaloneSetup(new WelcomeController(new WelcomeService())).build();
+
     }
-    
+
     private String connect() throws IOException {
         // ★ルートとなる設定ファイルを読み込む
         try (InputStream in = Resources.getResourceAsStream("mybatis-config.xml")) {
@@ -54,18 +53,18 @@ public class WelcomeControllerTest {
                     });
                 });
             }
-        }        
+        }
         return null;
     }
-    
+
     @Test
     public void testGet__Ok() throws Exception {
         System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaa 111");
         connect();
         System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaa 222");
         MvcResult result = mockMvc.perform(get("/"))
-            .andExpect(status().isOk())
-            .andReturn();
+                .andExpect(status().isOk())
+                .andReturn();
         String content = result.getResponse().getContentAsString();
         assertEquals("Hello!!", content);
     }

@@ -7,13 +7,12 @@
  *
  * http://www.eclipse.org/legal/epl-v20.html
  */
-
 package com.example.project;
 
 public class Calculator {
 
-	public int add(int a, int b) {
-		return a + b;
-	}
+    public int add(int a, int b) {
+        return a + b;
+    }
 
 }
