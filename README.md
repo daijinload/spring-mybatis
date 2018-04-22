@@ -2,12 +2,12 @@
 
 このプロジェクトは、Java8 Spring-MVC4 Mybatis3 Junit5で動かしています。
 
-junitチームが公開している[junit5-vanilla-gradle](https://github.com/junit-team/junit5-samples/tree/master/junit5-vanilla-gradle) プロジェクトがベースとなって作っています。
+junitチームが公開している [junit5-vanilla-gradle](https://github.com/junit-team/junit5-samples/tree/master/junit5-vanilla-gradle) プロジェクトがベースとなっています。
 
-テスト実行が２秒を切ることを目標に作成しています。
+テスト実行が２秒を切ることを目標に作成してます。
 
-mavenベースのプロジェクトでも良かったのですが、gradleベースのほうが手元のマシンで実行が
-速かったためgradleベースを採用しました。
+mavenベースのプロジェクトでも良かったのですが、gradleベースのほうが手元のマシンで実行速度が
+良かったためgradleベースを採用しました。
 
 # require
 
