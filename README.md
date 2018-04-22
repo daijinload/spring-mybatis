@@ -71,3 +71,12 @@ cat ./build/reports/spotbugs/report.txt
 or
 java -jar ./spotbugs-3.1.3/lib/spotbugs.jar -textui -effort:max -output spotbugs-report.html -html build/classes/
 ```
+
+## jacoco
+
+コードカバレッジツール
+
+```
+gradle jacoco
+# output -> build/reports/jacoco/html/index.html
+```
