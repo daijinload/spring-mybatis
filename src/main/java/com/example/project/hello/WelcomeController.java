@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class WelcomeController {
 
-    private final Logger logger = LoggerFactory.getLogger(WelcomeController.class);
-    private final WelcomeService welcomeService;
+  private final Logger logger = LoggerFactory.getLogger(WelcomeController.class);
+  private final WelcomeService welcomeService;
 
-    @Autowired
-    public WelcomeController(WelcomeService welcomeService) {
-        this.welcomeService = welcomeService;
-    }
+  @Autowired
+  public WelcomeController(WelcomeService welcomeService) {
+    this.welcomeService = welcomeService;
+  }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    @ResponseBody
-    public String index() {
-        logger.debug("index() is executed!");
-        return "Hello!!";
-    }
+  @RequestMapping(value = "/", method = RequestMethod.GET)
+  @ResponseBody
+  public String index() {
+    logger.debug("index() is executed!");
+    return "Hello!!";
+  }
 }
