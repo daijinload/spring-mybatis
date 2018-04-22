@@ -47,6 +47,8 @@ or
 
 # options
 
+## google-java-format
+
 googleのフォーマッタを使っています。インデントが2スペースで微妙ですが、無いよりはマシと、とりあえずつかっています。
 
 ```
@@ -55,3 +57,17 @@ wget https://github.com/google/google-java-format/releases/download/google-java-
 find . -name "*.java" | xargs java -jar ./google-java-format-1.5-all-deps.jar --replace
 ```
 
+## spotbugs
+
+静的チェッカー。見やすいほうで良いが、個人的にはtxtファイルのほうが見やすい。catでも見れるしね。
+
+```
+cd プロジェクトroot
+wget http://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs/3.1.3/spotbugs-3.1.3.zip
+unzip spotbugs-3.1.3.zip
+mkdir -p build/reports/spotbugs
+java -jar ./spotbugs-3.1.3/lib/spotbugs.jar -textui -effort:max -output build/reports/spotbugs/report.txt build/classes/
+cat ./build/reports/spotbugs/report.txt 
+or
+java -jar ./spotbugs-3.1.3/lib/spotbugs.jar -textui -effort:max -output spotbugs-report.html -html build/classes/
+```
